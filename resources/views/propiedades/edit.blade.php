@@ -96,6 +96,8 @@
             </select>
             <label for="formas_de_pago"  class="form-label mt-2">FORMAS DE PAGO</label>
             <input class="form-control mt-2" type="text"  value="{{ $propiedad->forma_de_pago }}" name="forma_de_pago" placeholder="describe las formas de pago">
+            <label for="metraje"  class="form-label mt-2">COMODIDADES</label>
+            <input class="form-control mt-2" type="text" value="{{ $propiedad->comodidades }}"  name="metraje" placeholder="describe el metraje de la propiedad ej :2500 m2 cubiertos">
           
             <label for="metraje"  class="form-label mt-2">METRAJE</label>
             <input class="form-control mt-2" type="text" value="{{ $propiedad->metraje }}"  name="metraje" placeholder="describe el metraje de la propiedad ej :2500 m2 cubiertos">

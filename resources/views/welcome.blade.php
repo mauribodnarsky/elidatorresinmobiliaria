@@ -24,10 +24,9 @@
     </head>
     <body>
         
-    <div class="container-fluid">
+    <div class="container">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="http://127.0.0.1:8000/storage/elidalogolimpio.png"  width="250"  alt=""></a>
+    <a class="navbar-brand" href="#"><img src="https://elidatorresinmobiliaria.com.ar/storage/elidalogolimpio.png"  width="250"  alt=""></a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -35,7 +34,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/">Oportunidades</a>
+          <a class="nav-link active" aria-current="page" href="https://elidatorresinmobiliaria.com.ar/">Oportunidades</a>
           
         </li>
         <li class="nav-item dropdown">
@@ -43,16 +42,16 @@
             Propiedades
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="http://127.0.0.1:8000/filtrar/alquiler/*">Alquileres</a></li>
-            <li><a class="dropdown-item" href="http://127.0.0.1:8000/filtrar/alquiler/casa">Casas</a></li>
-            <li><a class="dropdown-item" href="http://127.0.0.1:8000/filtrar/alquiler/departamento">Departamentos</a></li>
-            <li><a class="dropdown-item" href="http://127.0.0.1:8000/filtrar/alquiler/otro">Otro</a></li>
+            <li><a class="dropdown-item" href="https://elidatorresinmobiliaria.com.ar/filtrar/alquiler/*">Alquileres</a></li>
+            <li><a class="dropdown-item" href="https://elidatorresinmobiliaria.com.ar/filtrar/alquiler/casa">Casas</a></li>
+            <li><a class="dropdown-item" href="https://elidatorresinmobiliaria.com.ar/filtrar/alquiler/departamento">Departamentos</a></li>
+            <li><a class="dropdown-item" href="https://elidatorresinmobiliaria.com.ar/filtrar/alquiler/otro">Otro</a></li>
 
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="http://127.0.0.1:8000/filtrar/venta/*">Ventas</a></li>
-            <li><a class="dropdown-item" href="http://127.0.0.1:8000/filtrar/venta/casa">Casas</a></li>
-            <li><a class="dropdown-item" href="http://127.0.0.1:8000/filtrar/venta/departamento">Departamentos</a></li>
-            <li><a class="dropdown-item" href="http://127.0.0.1:8000/filtrar/venta/otro">Otro</a></li>
+            <li><a class="dropdown-item" href="https://elidatorresinmobiliaria.com.ar/filtrar/venta/*">Ventas</a></li>
+            <li><a class="dropdown-item" href="https://elidatorresinmobiliaria.com.ar/filtrar/venta/casa">Casas</a></li>
+            <li><a class="dropdown-item" href="https://elidatorresinmobiliaria.com.ar/filtrar/venta/departamento">Departamentos</a></li>
+            <li><a class="dropdown-item" href="https://elidatorresinmobiliaria.com.ar/filtrar/venta/otro">Otro</a></li>
 
         </ul>
         </li>
@@ -65,14 +64,13 @@
         </li>
       </ul>
     </div>
-  </div>
 </nav>
-<header class="row header d-flex align-items-center ">
-<div class="col-md-4 col-4 text-center">
-            <img src="http://127.0.0.1:8000/storage/agenteinmobiliaria.png" class="w-100 " alt="">
+<header class="row header">
+<div class="col-lg-4 col-12 text-center d-flex align-items-center ">
+            <img src="https://elidatorresinmobiliaria.com.ar/storage/agenteinmobiliaria.png" class="w-100 " alt="">
             </div>
 
-<div class="col-md-8 col-8 bg-danger border-danger rounded-pill border   titulo  opacity-50 p-5 text-white">
+<div class="col-lg-8 col-12 bg-danger border-danger border  d-flex align-items-center   titulo  opacity-50 p-2 text-white">
                 <h1  >ELIDA TORRES INMOBILIARIA</h1>
                 <H5>Somos una empresa dedicada a la venta , alquiler,  administración y tasación de bienes inmuebles, al servicio de los mendocinos y todas las personas que necesiten nuestros servicios. Eficientes , confiables y con mucha seriedad a la hora de realizar sus inversiones.Nuestra trayectoria en el mercado nos avala.</H5>
             </div>
@@ -120,7 +118,7 @@
                                             <a href="https://api.whatsapp.com/send?phone=542625528571&text=hola%2C%20me%20interesa%20la%20propiedad%20{{ $propiedad->titulo }}" target="_blank" rel="noopener noreferrer" class="btn btn-danger w-100">CONTACTAR</a>
                                         </div>
                                         <div class="col-md-6 my-1 col-12 col-lg-10 text-center">
-                                            <a target="blank"  class=" btn btn-danger w-100">VER MÁS </a>
+                                            <a target="blank" href="{{ route('propiedades.show', $propiedad->titulo) }}"  class=" btn btn-danger w-100">VER MÁS </a>
 
                                         </div>
                                     </div>
@@ -205,8 +203,7 @@
 </script>
         <style>
             .header{
-                height: 60vh;
-                background-image: url("http://127.0.0.1:8000/storage/inmobiliaria.jpeg");
+                background-image: url("https://elidatorresinmobiliaria.com.ar/storage/inmobiliaria.jpeg");
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-attachment: fixed;

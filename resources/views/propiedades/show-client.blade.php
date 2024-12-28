@@ -1,5 +1,24 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
+        <title>{{ config('app.name', 'Elida torres inmobiliaria') }}</title>
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </head>
+    <body class="font-sans antialiased">
 <div class="container mx-auto py-12 ">
     <div class="row">
         <div class="col-12">
@@ -12,7 +31,7 @@
                             <img src="http://127.0.0.1:8000/storage/elidalogolimpio.png"  width="250"  alt="">
                             </div>              
 
-                            <div class="col-6 d-flex align-items-center">
+                            <div class="col-6 mt-2 d-flex align-items-center">
                                 <h1 class="text-2xl   font-bold my-auto">{{ $propiedad->titulo }}</h1>
                             </div>
                             
@@ -71,11 +90,7 @@
                             </div>
                             
                             </div>
-               
-                            </div>
-                            
-                            </div>
-                 
+                 </div>
                  <div class="row">
                     <div class="col-12">
                     <section >
@@ -86,29 +101,26 @@
                     </section>
                     </div>
                  </div>
+               
                     </div>
                 </div>   
          
                 </div>
-        </div>
-    </div>
-</div>
-<div class="preview-container" id="previewContainer">
-    <div id="preview">
-    </div>
-    <button onclick="downloadPropiedad('{{json_encode($propiedad)}}')">Descargar Imagen</button>
-  </div>
-  <div class="row">
+                <div class="row">
                     <div class="col-8 offset-2 mt-2">
                         <video src="{{$propiedad->video}}" autoplay class="w-100   "></video>
                     </div>
                  </div>
 
+        </div>
+    </div>
+</div>
+
 
 <style>
     section{
         display: flex;
-        width: 90vw;
+        width: 80VW;
         height: 430px;
     }
     section img{
@@ -127,34 +139,8 @@
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script>
-
-
-    function downloadPropiedad(propiedad) {
-      // En este punto, podrías implementar la lógica para convertir la vista previa en una imagen JPG.
-      // Puedes utilizar bibliotecas como html2canvas para esto.
-      // Aquí está el enlace a la biblioteca html2canvas: https://html2canvas.hertzen.com/
-
-      // Aquí puedes agregar el código para convertir la vista previa en una imagen y descargarla.
-      // Ejemplo:
-      let propiedadparam=JSON.parse(propiedad);
-       html2canvas(document.getElementById("preview")).then(canvas => {
-         const image = canvas.toDataURL("image/jpeg");
-         const link = document.createElement("a");
-         link.href = image;
-         link.download = propiedadparam.titulo+".jpg";
-         link.click();
-       });
-
-      // Por ahora, solo ocultaremos la vista previa.
-      const previewContainer = document.getElementById("previewContainer");
-      previewContainer.style.display = "none";
-    }
-  </script>
-<style>
-    #preview{
-        background: #e7d5d5;
-
-    }
 </style>
+
+</div>
+    </body>
+</html>

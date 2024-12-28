@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Propiedad;
 use Faker\Core\Number;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use PhpParser\Builder\Property;
 
 class PropiedadController extends Controller
@@ -38,6 +39,7 @@ class PropiedadController extends Controller
         $objetopropiedad['telefono_contacto']=$data['telefono_contacto'];
         $objetopropiedad['email_contacto']=$data['email_contacto'];
         $objetopropiedad['nombre_contacto']=$data['nombre_contacto'];
+        $objetopropiedad['comodidades']=$data['comodidades'];
         
         if(isset($data['publicada'])){
             if($data['publicada']=='on'){
@@ -57,9 +59,9 @@ class PropiedadController extends Controller
                  $videourl = Storage::url($path);
                  $objetopropiedad['video']=$videourl;
         
-                }
-
+                };
                 $r=Propiedad::create($objetopropiedad);
+               
                 if(isset($data['fotos'])){
                     foreach($data['fotos'] as $foto){
                     $filename=$foto->getClientOriginalName();
@@ -98,9 +100,18 @@ class PropiedadController extends Controller
      */
     public function show($propiedad_id)
     {
+        
         $propiedad = Propiedad::where('titulo', $propiedad_id)->with('galerias')->get();
         if(isset($propiedad[0])){
-            return view('propiedades.show',['propiedad'=>$propiedad[0]]);
+            if(Auth::check()){
+
+                return view('propiedades.show',['propiedad'=>$propiedad[0]]);
+        
+            }else{
+             
+            return view('propiedades.show-client',['propiedad'=>$propiedad[0]]);
+           
+            }
         }else{
 
             return view('propiedades.error');
@@ -143,6 +154,7 @@ class PropiedadController extends Controller
         $objetopropiedad['telefono_contacto']=$data['telefono_contacto'];
         $objetopropiedad['email_contacto']=$data['email_contacto'];
         $objetopropiedad['nombre_contacto']=$data['nombre_contacto'];
+        $objetopropiedad['comodidades']=$data['comodidades'];
 
         if(isset($data['publicada'])){
             if($data['publicada']=='on'){

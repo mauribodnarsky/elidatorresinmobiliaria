@@ -11,7 +11,7 @@ class Propiedad extends Model
     use HasFactory;
     protected $fillable=['titulo','tipo','operacion' ,'forma_de_pago','metraje',  
     'habitaciones',       'baños',        'cocheras',    'descripcion_detallada',
-    'fotos', 'video','nombre_contacto','telefono_contacto','email_contacto','publicada'];
+     'video','nombre_contacto','telefono_contacto','email_contacto','publicada'];
     protected $table='propiedades';
  protected $with=['galerias'];
  public $timestamps = true;

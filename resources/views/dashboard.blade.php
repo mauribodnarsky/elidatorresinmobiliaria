@@ -47,6 +47,7 @@
                 <option value="ALQUILER CON OPCION DE COMPRA">ALQUILER CON OPCION DE COMPRA</option>
             </select>
             <input class="form-control mt-2" type="text" name="forma_de_pago" placeholder="describe las formas de pago">
+            <input class="form-control mt-2" type="text" name="comodidades" placeholder="describe las comodidades">
 
             <input class="form-control mt-2" type="text" name="metraje" placeholder="describe el metraje de la propiedad ej :2500 m2 cubiertos">
             <input class="form-control mt-2" type="text" name="habitaciones" placeholder="describe las habitaciones">

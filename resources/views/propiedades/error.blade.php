@@ -9,6 +9,6 @@
 
 <script>
   setTimeout(function(){
-    window.location.href="https:/elidatorresinmobiliaria.com.ar"  
+    window.location.href="http://127.0.0.1:8000/"  
   },3000)
 </script>

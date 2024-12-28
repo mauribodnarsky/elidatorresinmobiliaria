@@ -1,1 +1,1 @@
-<img src="https:/elidatorresinmobiliaria.com.ar/storage/elidalogolimpio.png"  width="250"  alt="">
+<img src="http://127.0.0.1:8000/storage/elidalogolimpio.png"  width="250"  alt="">

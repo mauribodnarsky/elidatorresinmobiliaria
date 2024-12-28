@@ -25,12 +25,12 @@ class CreatePropiedadesTable extends Migration
 
             $table->string('cocheras',100)->nullable();
             $table->string('descripcion_detallada',600)->nullable();
-            $table->json('fotos',2000)->nullable();
             $table->string('video',600)->nullable();
             $table->string('nombre_contacto',200)->nullable();
             $table->string('email_contacto',100)->nullable();
             $table->string('telefono_contacto',50)->nullable();
             $table->boolean('publicada')->nullable();
+            $table->string('comodidades',200)->nullable();
 
             $table->timestamps();
         });
